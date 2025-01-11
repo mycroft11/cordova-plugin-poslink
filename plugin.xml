@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+        id="PAXPos"
+        version="1.0.0">
+
+    <name>PAXPos</name>
+
+    <js-module src="www/poslink.js" name="PAXPos">
+        <clobbers target="PAXPos" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <source-file src="src/android/lib/use_aar/PAX_POSLinkAndroid_20240425.aar" target-dir="libs" />
+        <source-file src="src/android/PAXPos.java" target-dir="src/com/downtown/cordova/plugin" />
+
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="PAXPos">
+                <param name="android-package" value="com.downtown8.cordova.plugin.PAXPos"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml"  parent="/manifest">
+            <uses-feature android:name="android.hardware.usb.host"/>
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.FLASHLIGHT"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+            <uses-permission android:name="com.pax.permission.ICC"/>
+            <uses-permission android:name="com.pax.permission.PRINTER"/>
+            <uses-permission android:name="com.pax.permission.PICC"/>
+            <uses-permission android:name="com.pax.permission.USB_SECURITY"/>
+            <uses-permission android:name="com.pax.permission.PED"/>
+
+            <!-- AIDL, targetSdkVersion greater than or equal to 30 -->
+            <queries>
+                <intent>
+                    <action android:name="com.pax.us.std.poslink.aidl" />
+                </intent>
+            </queries>
+
+        </config-file>
+    </platform>
+
+</plugin>
