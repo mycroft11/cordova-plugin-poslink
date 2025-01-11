@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
-        id="PAXPos"
+        id="cordova-plugin-poslink"
         version="1.0.0">
 
     <name>PAXPos</name>
 
-    <js-module src="www/poslink.js" name="PAXPos">
+    <js-module src="www/POSLink.js" name="PAXPos">
         <clobbers target="PAXPos" />
     </js-module>
 

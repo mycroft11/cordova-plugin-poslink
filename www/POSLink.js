@@ -1,3 +1,5 @@
+var exec = require('cordova/exec');
+
 var PAXPos = {
     /**
      * process Payment request
@@ -6,7 +8,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     processPayment: function (request, success, failure) {
-        cordova.exec(success, failure, "PAXPos", "processPayment", [request]);
+        exec(success, failure, "PAXPos", "processPayment", [request]);
     },
     /**
      * process Resport request
@@ -15,7 +17,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     processReport: function (request, success, failure) {
-        cordova.exec(success, failure, "PAXPos", "processReport", [request]);
+        exec(success, failure, "PAXPos", "processReport", [request]);
     },
     /**
      * process Manage request
@@ -24,7 +26,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     processManage: function (request, success, failure) {
-        cordova.exec(success, failure, "PAXPos", "processManage", [request]);
+        exec(success, failure, "PAXPos", "processManage", [request]);
     },
     /**
      * process Batch request
@@ -33,7 +35,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     processBatch: function (request, success, failure) {
-        cordova.exec(success, failure, "PAXPos", "processBatch", [request]);
+        exec(success, failure, "PAXPos", "processBatch", [request]);
     },
     /**
      * open scan
@@ -43,7 +45,7 @@ var PAXPos = {
      */
     openScan: function (scannerType, success, failure) {
         scannerType = scannerType || null;
-        cordova.exec(success, failure, "PAXPos", "openScan", [scannerType]);
+        exec(success, failure, "PAXPos", "openScan", [scannerType]);
     },
     /**
      * close scan
@@ -51,7 +53,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     closeScan: function (success, failure) {
-        cordova.exec(success, failure, "PAXPos", "closeScan", []);
+        exec(success, failure, "PAXPos", "closeScan", []);
     },
     /**
      * scan
@@ -59,7 +61,7 @@ var PAXPos = {
      * @param {*} failure 
      */
     scan: function (success, failure) {
-        cordova.exec(success, failure, "PAXPos", "scan", []);
+        exec(success, failure, "PAXPos", "scan", []);
     },
     /**
      * print
@@ -75,7 +77,7 @@ var PAXPos = {
         if (type != 'ArrayBuffer') {
             throw new Error('PAXPos.print - data is not an Array Buffer! (Got: ' + type + ')');
         }        
-        cordova.exec(success, failure, "PAXPos", "executePrint", [dataToWrite]);
+        exec(success, failure, "PAXPos", "executePrint", [dataToWrite]);
     }
 };
 

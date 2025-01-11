@@ -1,19 +1,41 @@
 {
-  "name": "umeng_plugin",
+  "name": "cordova-plugin-poslink",
   "version": "1.0.0",
-  "description": "umeng analytics plugin",
+  "description": "A cordova plugin for POSLink for android platform.",
   "cordova": {
-    "id": "Umeng",
+    "id": "cordova-plugin-poslink",
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mycroft11/cordova-plugin-poslink.git"
+  },
   "keywords": [
+    "cordova",
+    "bluetooth",
+    "printer",
+    "pos",
+    "text",
+    "barcode",
+    "image",
+    "base64",
+    "qrcode",
     "ecosystem:cordova",
-    "cordova-ios",
     "cordova-android"
   ],
-  "author": "downtown8",
-  "license": "ISC"
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Julian  D",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/mycroft11/cordova-plugin-poslink/issues"
+  },
+  "homepage": "https://github.com/mycroft11/cordova-plugin-poslink#readme"
 }
